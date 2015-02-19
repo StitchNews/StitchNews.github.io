@@ -5,13 +5,18 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
+    @request.link_sent=false
     if @request.save
-      UserMailer.download_request(@request.email).deliver_now
-      render 'new'
+      #UserMailer.download_request(@request.email).deliver_now
+      redirect_to success_path
     else
       render 'new'
     end
   end
+
+  def success
+
+  end 
 
   private
 

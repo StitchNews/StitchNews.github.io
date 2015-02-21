@@ -121,6 +121,7 @@
         cursor: pointer;
         font-size: 14px;
 
+        border: 0px;
         border-radius: 0px 6px 6px 0px;
       }
 
@@ -155,7 +156,7 @@
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
       }
-      
+
     </style>
 
   </head>
@@ -164,13 +165,13 @@
       <div class="header" style="display: none;">
         <nav class="nav">
           <div class="nav-item">
-            First 
+            First
           </div>
           <div class="nav-item">
             Second
           </div>
         </nav>
-        <div class="brand"> 
+        <div class="brand">
           Stitch <span class="brand-thin">News</span>
         </div>
       </div>
@@ -179,8 +180,8 @@
 
         <div class="column">
           <div class="inner-column v-center">
-            <%= image_tag("appPreview2.png", :alt => "App Preview", height: '450', :style=>'display: inline; padding: 10px;') %>
             <%= image_tag("appPreview1.png", :alt => "App Preview", height: '450', :style=>'display: inline; padding: 10px;') %>
+            <%= image_tag("appPreview2.png", :alt => "App Preview", height: '450', :style=>'display: inline; padding: 10px;') %>
           </div>
         </div>
 
@@ -199,18 +200,17 @@
               Read the important things.
             </div>
             <div class="row" style="font-size: 14px; padding-bottom: 10px;">
-              Get a download link sent to your email or phone
+              Get a download link sent to your email
             </div>
             <div class="row">
               <%= form_for(Request.new) do |f| %> <!-- built-in form creation function -->
-                <%= f.text_field :email, class: 'cta-field', :placeholder => "Email or phone number", :style=> 'display:inline-block' %>
+                <%= f.text_field :email, class: 'cta-field', :placeholder => "Email address", :style=> 'display:inline-block' %>
 
                 <%= f.submit "SEND", class: "cta-button", :style=>'display:inline-block' %>
               <% end %>
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="footer">
